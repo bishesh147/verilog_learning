@@ -1,0 +1,265 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x137009bf0 .scope module, "single_clock_fifo_tb" "single_clock_fifo_tb" 2 6;
+ .timescale -12 -12;
+P_0x13700e240 .param/l "endtime" 0 2 12, +C4<00000000000000000010011100010000>;
+v0x137020d20_0 .var "clk", 0 0;
+v0x137020db0_0 .net "empty", 0 0, L_0x137021c50;  1 drivers
+v0x137020e60_0 .net "full", 0 0, L_0x137021690;  1 drivers
+v0x137020f30_0 .var/i "i", 31 0;
+v0x137020fc0_0 .net "rd_data", 7 0, L_0x137021d70;  1 drivers
+v0x137021090_0 .var "rd_en", 0 0;
+v0x137021140_0 .var "rst", 0 0;
+v0x1370211f0_0 .var "wr_data", 7 0;
+v0x1370212a0_0 .var "wr_en", 0 0;
+S_0x137009d60 .scope module, "F1" "FIFO" 2 16, 3 1 0, S_0x137009bf0;
+ .timescale -12 -12;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "wr_en";
+    .port_info 2 /INPUT 8 "wr_data";
+    .port_info 3 /OUTPUT 1 "full";
+    .port_info 4 /INPUT 1 "rd_en";
+    .port_info 5 /OUTPUT 8 "rd_data";
+    .port_info 6 /OUTPUT 1 "empty";
+    .port_info 7 /INPUT 1 "rst";
+L_0x1370219c0 .functor AND 1, L_0x137021770, L_0x137021850, C4<1>, C4<1>;
+L_0x137021d70 .functor BUFZ 8, v0x13701ff70_0, C4<00000000>, C4<00000000>, C4<00000000>;
+L_0x118050010 .functor BUFT 1, C4<100000>, C4<0>, C4<0>, C4<0>;
+v0x13700c370_0 .net/2u *"_ivl_0", 5 0, L_0x118050010;  1 drivers
+v0x13701f370_0 .net *"_ivl_12", 0 0, L_0x137021770;  1 drivers
+L_0x1180500e8 .functor BUFT 1, C4<100000>, C4<0>, C4<0>, C4<0>;
+v0x13701f410_0 .net/2u *"_ivl_14", 5 0, L_0x1180500e8;  1 drivers
+v0x13701f4b0_0 .net *"_ivl_16", 0 0, L_0x137021850;  1 drivers
+v0x13701f550_0 .net *"_ivl_18", 0 0, L_0x1370219c0;  1 drivers
+v0x13701f640_0 .net *"_ivl_2", 0 0, L_0x1370213d0;  1 drivers
+L_0x118050130 .functor BUFT 1, C4<00>, C4<0>, C4<0>, C4<0>;
+v0x13701f6e0_0 .net/2s *"_ivl_20", 1 0, L_0x118050130;  1 drivers
+L_0x118050178 .functor BUFT 1, C4<01>, C4<0>, C4<0>, C4<0>;
+v0x13701f790_0 .net/2s *"_ivl_22", 1 0, L_0x118050178;  1 drivers
+v0x13701f840_0 .net *"_ivl_24", 1 0, L_0x137021af0;  1 drivers
+L_0x118050058 .functor BUFT 1, C4<01>, C4<0>, C4<0>, C4<0>;
+v0x13701f950_0 .net/2s *"_ivl_4", 1 0, L_0x118050058;  1 drivers
+L_0x1180500a0 .functor BUFT 1, C4<00>, C4<0>, C4<0>, C4<0>;
+v0x13701fa00_0 .net/2s *"_ivl_6", 1 0, L_0x1180500a0;  1 drivers
+v0x13701fab0_0 .net *"_ivl_8", 1 0, L_0x137021510;  1 drivers
+v0x13701fb60_0 .net "clk", 0 0, v0x137020d20_0;  1 drivers
+v0x13701fc00_0 .net "empty", 0 0, L_0x137021c50;  alias, 1 drivers
+v0x13701fca0_0 .net "full", 0 0, L_0x137021690;  alias, 1 drivers
+v0x13701fd40 .array "mem_buffer", 0 31, 7 0;
+v0x13701fde0_0 .net "rd_data", 7 0, L_0x137021d70;  alias, 1 drivers
+v0x13701ff70_0 .var "rd_data2", 7 0;
+v0x137020000_0 .net "rd_en", 0 0, v0x137021090_0;  1 drivers
+v0x1370200a0_0 .var "rd_ptr", 5 0;
+v0x137020150_0 .net "rst", 0 0, v0x137021140_0;  1 drivers
+v0x1370201f0_0 .net "wr_data", 7 0, v0x1370211f0_0;  1 drivers
+v0x1370202a0_0 .net "wr_en", 0 0, v0x1370212a0_0;  1 drivers
+v0x137020340_0 .var "wr_ptr", 5 0;
+E_0x13700d140 .event posedge, v0x13701fb60_0;
+L_0x1370213d0 .cmp/eq 6, v0x137020340_0, L_0x118050010;
+L_0x137021510 .functor MUXZ 2, L_0x1180500a0, L_0x118050058, L_0x1370213d0, C4<>;
+L_0x137021690 .part L_0x137021510, 0, 1;
+L_0x137021770 .cmp/ge 6, v0x137020340_0, v0x1370200a0_0;
+L_0x137021850 .cmp/ge 6, L_0x1180500e8, v0x1370200a0_0;
+L_0x137021af0 .functor MUXZ 2, L_0x118050178, L_0x118050130, L_0x1370219c0, C4<>;
+L_0x137021c50 .part L_0x137021af0, 0, 1;
+S_0x1370204b0 .scope task, "clock_generator" "clock_generator" 2 38, 2 38 0, S_0x137009bf0;
+ .timescale -12 -12;
+TD_single_clock_fifo_tb.clock_generator ;
+T_0.0 ;
+    %delay 10, 0;
+    %load/vec4 v0x137020d20_0;
+    %nor/r;
+    %store/vec4 v0x137020d20_0, 0, 1;
+    %jmp T_0.0;
+    %end;
+S_0x137020620 .scope task, "endsimulation" "endsimulation" 2 63, 2 63 0, S_0x137009bf0;
+ .timescale -12 -12;
+TD_single_clock_fifo_tb.endsimulation ;
+    %delay 10000, 0;
+    %vpi_call 2 66 "$display", "-----------------The Simulation Ended---------------" {0 0 0};
+    %vpi_call 2 67 "$finish" {0 0 0};
+    %end;
+S_0x1370207e0 .scope task, "main" "main" 2 29, 2 29 0, S_0x137009bf0;
+ .timescale -12 -12;
+TD_single_clock_fifo_tb.main ;
+    %fork t_1, S_0x1370207e0;
+    %fork t_2, S_0x1370207e0;
+    %fork t_3, S_0x1370207e0;
+    %fork t_4, S_0x1370207e0;
+    %join;
+    %join;
+    %join;
+    %join;
+    %jmp t_0;
+t_1 ;
+    %fork TD_single_clock_fifo_tb.clock_generator, S_0x1370204b0;
+    %join;
+    %end;
+t_2 ;
+    %fork TD_single_clock_fifo_tb.operation_process, S_0x1370209a0;
+    %join;
+    %end;
+t_3 ;
+    %fork TD_single_clock_fifo_tb.simulation_result, S_0x137020b60;
+    %join;
+    %end;
+t_4 ;
+    %fork TD_single_clock_fifo_tb.endsimulation, S_0x137020620;
+    %join;
+    %end;
+    .scope S_0x1370207e0;
+t_0 ;
+    %end;
+S_0x1370209a0 .scope task, "operation_process" "operation_process" 2 44, 2 44 0, S_0x137009bf0;
+ .timescale -12 -12;
+TD_single_clock_fifo_tb.operation_process ;
+    %delay 110, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x137021140_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x1370212a0_0, 0, 1;
+    %vpi_func 2 46 "$random" 32 {0 0 0};
+    %pad/s 8;
+    %store/vec4 v0x1370211f0_0, 0, 8;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v0x137020f30_0, 0, 32;
+T_3.1 ;
+    %load/vec4 v0x137020f30_0;
+    %cmpi/s 50, 0, 32;
+    %jmp/0xz T_3.2, 5;
+    %delay 20, 0;
+    %vpi_func 2 48 "$random" 32 {0 0 0};
+    %pad/s 8;
+    %store/vec4 v0x1370211f0_0, 0, 8;
+    %load/vec4 v0x137020f30_0;
+    %addi 1, 0, 32;
+    %store/vec4 v0x137020f30_0, 0, 32;
+    %jmp T_3.1;
+T_3.2 ;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x137021090_0, 0, 1;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v0x137020f30_0, 0, 32;
+T_3.3 ;
+    %load/vec4 v0x137020f30_0;
+    %cmpi/s 100, 0, 32;
+    %jmp/0xz T_3.4, 5;
+    %delay 20, 0;
+    %vpi_func 2 52 "$random" 32 {0 0 0};
+    %pad/s 8;
+    %store/vec4 v0x1370211f0_0, 0, 8;
+    %load/vec4 v0x137020f30_0;
+    %addi 1, 0, 32;
+    %store/vec4 v0x137020f30_0, 0, 32;
+    %jmp T_3.3;
+T_3.4 ;
+    %end;
+S_0x137020b60 .scope task, "simulation_result" "simulation_result" 2 57, 2 57 0, S_0x137009bf0;
+ .timescale -12 -12;
+TD_single_clock_fifo_tb.simulation_result ;
+    %vpi_call 2 59 "$monitor", "time = %d \011 rst = %b \011 rd_en = %b \011 wr_en = %b \011 wr_data = %h \011 rd_data = %h \011 full = %b \011 empty = %b", $time, v0x137021140_0, v0x137021090_0, v0x1370212a0_0, v0x1370211f0_0, v0x137020fc0_0, v0x137020e60_0, v0x137020db0_0 {0 0 0};
+    %end;
+    .scope S_0x137009d60;
+T_5 ;
+    %wait E_0x13700d140;
+    %load/vec4 v0x137020150_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_5.0, 8;
+    %pushi/vec4 0, 0, 6;
+    %assign/vec4 v0x137020340_0, 0;
+    %pushi/vec4 0, 0, 6;
+    %assign/vec4 v0x1370200a0_0, 0;
+T_5.0 ;
+    %jmp T_5;
+    .thread T_5;
+    .scope S_0x137009d60;
+T_6 ;
+    %wait E_0x13700d140;
+    %load/vec4 v0x1370202a0_0;
+    %load/vec4 v0x13701fca0_0;
+    %nor/r;
+    %and;
+    %load/vec4 v0x137020150_0;
+    %nor/r;
+    %and;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_6.0, 8;
+    %load/vec4 v0x1370201f0_0;
+    %load/vec4 v0x137020340_0;
+    %pad/u 7;
+    %ix/vec4 3;
+    %ix/load 4, 0, 0; Constant delay
+    %assign/vec4/a/d v0x13701fd40, 0, 4;
+    %load/vec4 v0x137020340_0;
+    %addi 1, 0, 6;
+    %assign/vec4 v0x137020340_0, 0;
+T_6.0 ;
+    %jmp T_6;
+    .thread T_6;
+    .scope S_0x137009d60;
+T_7 ;
+    %wait E_0x13700d140;
+    %load/vec4 v0x137020150_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_7.0, 8;
+    %pushi/vec4 0, 0, 8;
+    %assign/vec4 v0x13701ff70_0, 0;
+    %jmp T_7.1;
+T_7.0 ;
+    %load/vec4 v0x137020000_0;
+    %load/vec4 v0x13701fc00_0;
+    %nor/r;
+    %and;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_7.2, 8;
+    %load/vec4 v0x1370200a0_0;
+    %pad/u 7;
+    %ix/vec4 4;
+    %load/vec4a v0x13701fd40, 4;
+    %assign/vec4 v0x13701ff70_0, 0;
+    %load/vec4 v0x1370200a0_0;
+    %addi 1, 0, 6;
+    %assign/vec4 v0x1370200a0_0, 0;
+    %jmp T_7.3;
+T_7.2 ;
+    %load/vec4 v0x13701ff70_0;
+    %assign/vec4 v0x13701ff70_0, 0;
+T_7.3 ;
+T_7.1 ;
+    %jmp T_7;
+    .thread T_7;
+    .scope S_0x137009bf0;
+T_8 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x137020d20_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x137021140_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x1370212a0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x137021090_0, 0, 1;
+    %pushi/vec4 0, 0, 8;
+    %store/vec4 v0x1370211f0_0, 0, 8;
+    %end;
+    .thread T_8;
+    .scope S_0x137009bf0;
+T_9 ;
+    %vpi_call 2 24 "$dumpfile", "single_clock_fifo.vcd" {0 0 0};
+    %vpi_call 2 25 "$dumpvars" {0 0 0};
+    %fork TD_single_clock_fifo_tb.main, S_0x1370207e0;
+    %join;
+    %end;
+    .thread T_9;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "single_clock_fifo_tb.v";
+    "./single_clock_fifo.v";
