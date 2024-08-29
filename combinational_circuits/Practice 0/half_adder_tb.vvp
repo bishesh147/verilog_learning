@@ -1,0 +1,67 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x14bf06e10 .scope module, "half_adder_tb" "half_adder_tb" 2 3;
+ .timescale 0 0;
+v0x14bf1b750_0 .var "a", 0 0;
+v0x14bf1b800_0 .var "b", 0 0;
+v0x14bf1b890_0 .net "carry", 0 0, L_0x14bf1bc10;  1 drivers
+v0x14bf1b940_0 .net "inverse", 0 0, L_0x14bf1bcc0;  1 drivers
+v0x14bf1b9f0_0 .net "sum", 0 0, L_0x14bf1bac0;  1 drivers
+S_0x14bf05800 .scope module, "add1" "half_adder" 2 7, 3 1 0, S_0x14bf06e10;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "sum";
+    .port_info 3 /OUTPUT 1 "carry";
+    .port_info 4 /OUTPUT 1 "inverse";
+L_0x14bf1bac0 .functor XOR 1, v0x14bf1b750_0, v0x14bf1b800_0, C4<0>, C4<0>;
+L_0x14bf1bc10 .functor AND 1, v0x14bf1b750_0, v0x14bf1b800_0, C4<1>, C4<1>;
+L_0x14bf1bcc0 .functor NOT 1, v0x14bf1b750_0, C4<0>, C4<0>, C4<0>;
+v0x14bf05970_0 .net "a", 0 0, v0x14bf1b750_0;  1 drivers
+v0x14bf1b420_0 .net "b", 0 0, v0x14bf1b800_0;  1 drivers
+v0x14bf1b4c0_0 .net "carry", 0 0, L_0x14bf1bc10;  alias, 1 drivers
+v0x14bf1b550_0 .net "inverse", 0 0, L_0x14bf1bcc0;  alias, 1 drivers
+v0x14bf1b5f0_0 .net "sum", 0 0, L_0x14bf1bac0;  alias, 1 drivers
+    .scope S_0x14bf06e10;
+T_0 ;
+    %vpi_call 2 10 "$dumpfile", "half_adder.vcd" {0 0 0};
+    %vpi_call 2 11 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x14bf06e10 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x14bf1b750_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x14bf1b800_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x14bf1b750_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x14bf1b800_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x14bf1b750_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x14bf1b800_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x14bf1b750_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x14bf1b800_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x14bf1b750_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x14bf1b800_0, 0, 1;
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "half_adder_tb.v";
+    "./half_adder.v";
